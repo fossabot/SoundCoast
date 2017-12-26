@@ -6,24 +6,26 @@
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
     "electron-is-dev": "^0.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "yarn build && build --em.main=build/electron.js"
+    "start-react": "react-scripts start",
+    "build-react": "react-scripts build",
+    "test-react": "react-scripts test --env=jsdom",
+    "start": "concurrently -k \"yarn start-react\" \"wait-on http://localhost:3000 && electron .\" \"node-sass --watch src/styles/scss -o src/styles/css\"",
+    "package": "yarn build-react && node-sass src/styles/scss -o src/styles/css && build --em.main=build/electron.js"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
     "electron": "^1.7.10",
     "electron-builder": "^19.49.2",
     "electron-react-devtools": "^0.5.2",
-    "wait-on": "^2.0.2"
+    "wait-on": "^2.0.2",
+    "node-sass": "^4.7.2"
   },
   "build": {
     "appId": "co.stashcat.soundcoast",
