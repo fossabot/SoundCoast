@@ -7,5 +7,5 @@ Made with Node, React and Electron.
 Feel free to contribute code to the project! I will gladly review any and all pull requests.
 
 ## Building
-To test the app simply run `npm run electron-dev`.  
-Package the app with `npm run electron-pack`.
+To test the app simply run `npm start`.
+Package the app with `npm build`.
