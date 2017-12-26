@@ -9,6 +9,7 @@
 # production
 /build
 /dist
+/src/styles/css
 
 # misc
 .DS_Store
