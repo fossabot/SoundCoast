@@ -1,0 +1,42 @@
+@import 'variables';
+
+:root
+{
+  --transition-fast: .1s;
+  --transition-normal: .25s;
+  --transition-slow: .5s;
+
+  --transition-ease-in-out: ease-in-out;
+  --transition-ease-out: ease-out;
+  --transition-ease-in: ease-in;
+}
+
+body
+{
+  background-color: #000;
+}
+
+#app-controls
+{
+  .nav-item
+  {
+    width: $nav-height;
+    text-align: center;
+
+    &:hover
+    {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    &:active
+    {
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+
+  .nav-item:first-child span
+  {
+    position: relative;
+    top: 9px;
+  }
+}

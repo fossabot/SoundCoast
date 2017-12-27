@@ -1,0 +1,48 @@
+@import 'variables';
+
+nav
+{
+  height: $nav-height;
+  padding: 0px !important;
+  line-height: $nav-height;
+
+  .navbar-brand, #navbar-drag
+  {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+  }
+
+  #navbar-drag
+  {
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  .navbar-nav
+  {
+    height: 100%;
+  }
+
+  .navbar-brand
+  {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: $nav-padding;
+    padding-right: $nav-padding / 2;
+    margin-right: 0px;
+  }
+
+  .nav-item
+  {
+    cursor: pointer;
+    svg
+    {
+      fill: rgba(255,255,255,0.5);
+    }
+
+    &:hover svg
+    {
+      fill: rgba(255,255,255,0.8);
+    }
+  }
+}
