@@ -7,5 +7,6 @@ Made with Node, React and Electron.
 Feel free to contribute code to the project! I will gladly review any and all pull requests.
 
 ## Building
-To test the app simply run `npm start`.
-Package the app with `npm build`.
+To test the app simply run `npm start`.  
+Package the app with `npm run build`.  
+(or with yarn)
