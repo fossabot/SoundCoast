@@ -19,7 +19,7 @@
     "build-react": "react-scripts build",
     "test-react": "react-scripts test --env=jsdom",
     "start": "concurrently -k \"node-sass -w -r src/styles/scss -o src/styles/css\" \"cross-env BROWSER=none yarn start-react\" \"wait-on http://localhost:3000 && electron .\"",
-    "package": "yarn build-react && node-sass src/styles/scss -o src/styles/css --output-style compressed && build --em.main=build/electron.js"
+    "package": "node-sass src/styles/scss -o src/styles/css --output-style compressed && yarn build-react && cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true build --em.main=build/electron.js"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
