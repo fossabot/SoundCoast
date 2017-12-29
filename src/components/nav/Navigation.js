@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavEntry from './NavEntry';
+import NavControl from './NavControl';
 import '../../styles/css/Navigation.css'
 
 class Navigation extends Component
@@ -28,9 +29,9 @@ class Navigation extends Component
           </div>
           <div id="navbar-drag"></div>
           <div id="app-controls" className="navbar-nav">
-            <NavEntry onClick={this.minimize} icon="android-remove"/>
-            <NavEntry onClick={this.maximize} icon="android-expand"/>
-            <NavEntry onClick={this.close} icon="android-close"/>
+            <NavControl action="min"/>
+            <NavControl action="max"/>
+            <NavControl action="close"/>
           </div>
       </nav>
     );
@@ -49,26 +50,7 @@ class Navigation extends Component
     }
   }
 
-  minimize()
-  {
-    let w = window.require('electron').remote.getCurrentWindow();
-    w.minimize();
-  }
 
-  maximize()
-  {
-    let w = window.require('electron').remote.getCurrentWindow();
-    if (w.isMaximized())
-      w.unmaximize();
-    else
-      w.maximize();
-  }
-
-  close()
-  {
-    let w = window.require('electron').remote.getCurrentWindow();
-    w.close();
-  }
 }
 
 export default Navigation;

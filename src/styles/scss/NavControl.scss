@@ -1,0 +1,17 @@
+@import 'variables';
+
+#app-controls
+{
+  .nav-item
+  {
+    width: $nav-height;
+    text-align: center;
+    border-radius: 0px;
+  }
+
+  .nav-item:first-child span
+  {
+    position: relative;
+    top: 9px;
+  }
+}
