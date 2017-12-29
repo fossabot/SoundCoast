@@ -9,21 +9,22 @@ class Navigation extends Component
     super();
     this.page = "home";
     this.pageChanged = true;
-    this.pages = new Map([["Home", "ios-home-outline"], ["Library", "ios-albums-outline"]]);
+    let pages = new Map([["Home", "ios-home-outline"], ["Library", "ios-albums-outline"]]);
+    this.navElements = [];
+
+    pages.forEach((val, key) => {
+      let active = this.page.toUpperCase() === key.toUpperCase();
+      this.navElements.push(<NavEntry active={active} key={key} icon={val} link={key}/>);
+    }, this);
   }
 
   render()
   {
-    let navElements = [];
-    this.pages.forEach(function (val, key) {
-      navElements.push(<NavEntry key={key} icon={val} link={key}/>);
-    });
-
     return (
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <span className="navbar-brand">SoundCoast</span>
           <div className="navbar-nav">
-            {navElements}
+            {this.navElements}
           </div>
           <div id="navbar-drag"></div>
           <div id="app-controls" className="navbar-nav">
